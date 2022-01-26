@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,10 +157,46 @@ namespace tarea1
         public static void GenerarHtml()
         {
             System.Console.Clear();
+            System.Console.WriteLine(@"
+                GENERAR UN ARCHIVO HTML CON DATOS DE UNA PERSONA
+            ");
+            System.Console.Write("Nombre:");
+            var nombre = System.Console.ReadLine();
+
+            System.Console.Write("Apellido:");
+            var apellido = System.Console.ReadLine();
+
+            System.Console.Write("Telefono:");
+            var telefono = System.Console.ReadLine();
+
+            string ruta = "..\\..\\..\\html\\";
+
+            if (!Directory.Exists(ruta))
+            {
+                Directory.CreateDirectory(ruta);
+            }
+
+            var random = new Random();
+            var color = String.Format("#{0:X6}", random.Next(0x1000000));
+            string html = "<!DOCTYPE html><html lang='en'><head> <meta charset='UTF-8'> <meta http-equiv='X-UA-Compatible' content='IE=edge'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> <title>Persona</title></head><body style='background-color: "+color+"; '> <div style='justify-content: center;'> <div style='background-color: white; opacity: 0.9; font-size: 50px; width: 500px; margin-left: auto; margin-right: auto; padding: 30px;'> <center>Datos personales</center> <p>Nombre: "+nombre+" </p><p>Apellido: "+apellido+" </p><p>Telefono: "+telefono+" </p></div></div></body></html>";
+
+            File.WriteAllText(ruta + nombre + ".html", html);
+
             System.Console.Write(@"
-                VER SI UN NUMERO DE TELEFONO CONTIENE MI MATRICULA
+             HTML GENERADO!
+            
+             Presione cualquier letra para continuar...
+            ");
+            System.Console.Read();
+        }
+        public static void AnalizarURL()
+        {
+            System.Console.Clear();
+            System.Console.Write(@"
+                ANALIZAR UN URL
                 
-            Digite un numero de telefono=>");
+            Escriba la URL=>");
+
 
             System.Console.Write(@"
             

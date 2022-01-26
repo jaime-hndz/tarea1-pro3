@@ -45,6 +45,9 @@ namespace tarea1
                     case "4":
                         Ejercicios.Triangulos();
                         break;
+                    case "5":
+                        Ejercicios.GenerarHtml();
+                        break;
                     case "00":
                         salir = true;
                         break;
