@@ -23,7 +23,7 @@ namespace tarea1
                         5. Generador un archivo HTML.
                         6. Contador de parrafos e imagenes.
                         7. Calcule de equivalente literal de una calificacion y posible distribución.
-                        9. Acerca de.
+                        8. Acerca de.
 
                         00. salir
 
@@ -48,14 +48,18 @@ namespace tarea1
                     case "5":
                         Ejercicios.GenerarHtml();
                         break;
+                    case "6":
+                        Ejercicios.AnalizarURL();
+                        break;
+                    case "7":
+                        Ejercicios.Calificacion();
+                        break;
+                    case "8":
+                        Ejercicios.AcercaDe();
+                        break;
                     case "00":
                         salir = true;
                         break;
-/*                    default:
-                        System.Console.Write(@"
-                        Digite una de las opciones, nmms!");
-                        System.Console.ReadLine();
-                        break;*/
                 }
             }
 
